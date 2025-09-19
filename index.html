@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>登录 - 连接钱包</title>
-  <link rel="stylesheet" href="style.css?v=1.04">
+  <link rel="stylesheet" href="style.css?v=1.05">
+  <!-- ethers.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
-  <script src="app.js?v=1.04" defer></script>
 </head>
 <body>
   <div class="container">
@@ -14,5 +14,8 @@
     <p id="status">未连接</p>
     <p id="debug" style="color:red;"></p> <!-- 调试信息显示 -->
   </div>
+
+  <!-- 放在 body 最后，确保 ethers.js 已加载 -->
+  <script src="app.js?v=1.05"></script>
 </body>
 </html>
