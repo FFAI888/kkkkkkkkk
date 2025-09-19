@@ -1,17 +1,17 @@
 const BSC_CHAIN_ID = "0x38"; // BSC 主网
 
+// 检查 ethers.js 是否加载成功
+if (typeof ethers === "undefined") {
+  alert("ethers.js 未加载，请检查网络或 CDN!");
+  throw new Error("ethers.js 未加载");
+}
+
 async function connectWallet() {
   const debugEl = document.getElementById("debug");
   debugEl.innerText = ""; // 清空调试信息
 
   console.log("连接钱包按钮被点击");
   debugEl.innerText += "按钮点击事件触发\n";
-
-  if (typeof window.ethers === "undefined" && typeof ethers === "undefined") {
-    debugEl.innerText += "ethers.js 未加载!\n";
-    alert("ethers.js 未加载，请检查网络或 CDN!");
-    return;
-  }
 
   if (!window.ethereum) {
     alert("请先安装 MetaMask!");
@@ -22,7 +22,6 @@ async function connectWallet() {
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-    // 请求账户授权
     const accounts = await provider.send("eth_requestAccounts", []);
     console.log("已连接账户:", accounts);
     debugEl.innerText += `已连接账户: ${accounts[0]}\n`;
@@ -38,7 +37,7 @@ async function connectWallet() {
     }
 
     document.getElementById("status").innerText = "已连接BSC链";
-    window.location.href = "relation.html"; // 跳转确认关系页面
+    window.location.href = "relation.html";
   } catch (err) {
     console.error("连接失败:", err);
     debugEl.innerText += "连接失败: " + err.message + "\n";
