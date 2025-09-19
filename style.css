@@ -15,28 +15,28 @@ html, body {
 }
 
 .container {
-  max-width: 800px;    /* 提高最大宽度 */
-  width: 90%;
-  margin: 100px auto 50px auto;
+  width: 95%;
+  max-width: 1000px;
+  margin: 80px auto 100px auto;
   padding: 0 15px;
 }
 
 h1 {
-  font-size: 3vw;       /* 字体自适应屏幕 */
-  margin-bottom: 20px;
+  font-size: 4vw;
+  margin-bottom: 25px;
   word-wrap: break-word;
 }
 
 button, .btn {
-  padding: 16px 32px;  /* 增加按钮高度 */
+  padding: 18px 36px;
   background: #f8b400;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: white;
-  font-size: 1.2em;    /* 相对字体，随屏幕放大 */
+  font-size: 1.4em;
   cursor: pointer;
-  width: 90%;           /* 按钮宽度增加 */
-  max-width: 400px;     /* 最大宽度 */
+  width: 90%;
+  max-width: 450px;
   margin: 15px auto;
   display: block;
 }
@@ -46,39 +46,45 @@ button:hover, .btn:hover {
 }
 
 #status {
-  margin-top: 25px;
+  margin-top: 30px;
   color: #555;
-  font-size: 1.1em;
+  font-size: 1.2em;
   word-wrap: break-word;
 }
 
-#debug {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: red;
-  word-wrap: break-word;
-}
-
-/* 底部导航栏 */
+/* 底部导航栏 App风格 */
 .navbar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: white;
+  background: #ffffff;
   border-top: 1px solid #ddd;
   display: flex;
   justify-content: space-around;
-  padding: 12px 0;
+  padding: 8px 0;
+  height: 70px;
   box-sizing: border-box;
 }
 
 .navbar a {
-  text-decoration: none;
-  color: #555;
-  font-size: 1em;
   flex: 1;
   text-align: center;
+  color: #555;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a i {
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+
+.navbar a span {
+  font-size: 14px;
 }
 
 .navbar a.active {
@@ -92,31 +98,17 @@ button:hover, .btn:hover {
 
 /* 响应式适配 */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 5vw;
-  }
-
-  button, .btn {
-    font-size: 1.1em;
-    padding: 14px 28px;
-  }
-
-  .navbar a {
-    font-size: 0.9em;
-  }
+  h1 { font-size: 6vw; }
+  button, .btn { font-size: 1.3em; padding: 16px 32px; }
+  .navbar { height: 60px; }
+  .navbar a i { font-size: 22px; }
+  .navbar a span { font-size: 12px; }
 }
 
 @media (max-width: 400px) {
-  h1 {
-    font-size: 6vw;
-  }
-
-  button, .btn {
-    font-size: 1em;
-    padding: 12px 24px;
-  }
-
-  .navbar a {
-    font-size: 0.8em;
-  }
+  h1 { font-size: 7vw; }
+  button, .btn { font-size: 1.1em; padding: 14px 28px; }
+  .navbar { height: 55px; }
+  .navbar a i { font-size: 20px; }
+  .navbar a span { font-size: 10px; }
 }
