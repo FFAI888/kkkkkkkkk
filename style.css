@@ -15,29 +15,29 @@ html, body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 800px;    /* 提高最大宽度 */
   width: 90%;
   margin: 100px auto 50px auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3vw;       /* 字体自适应屏幕 */
   margin-bottom: 20px;
   word-wrap: break-word;
 }
 
 button, .btn {
-  padding: 12px 24px;
+  padding: 16px 32px;  /* 增加按钮高度 */
   background: #f8b400;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   color: white;
-  font-size: 16px;
+  font-size: 1.2em;    /* 相对字体，随屏幕放大 */
   cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-  margin: 10px auto;
+  width: 90%;           /* 按钮宽度增加 */
+  max-width: 400px;     /* 最大宽度 */
+  margin: 15px auto;
   display: block;
 }
 
@@ -46,14 +46,15 @@ button:hover, .btn:hover {
 }
 
 #status {
-  margin-top: 20px;
+  margin-top: 25px;
   color: #555;
+  font-size: 1.1em;
   word-wrap: break-word;
 }
 
 #debug {
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 0.9em;
   color: red;
   word-wrap: break-word;
 }
@@ -68,14 +69,14 @@ button:hover, .btn:hover {
   border-top: 1px solid #ddd;
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 12px 0;
   box-sizing: border-box;
 }
 
 .navbar a {
   text-decoration: none;
   color: #555;
-  font-size: 14px;
+  font-size: 1em;
   flex: 1;
   text-align: center;
 }
@@ -90,17 +91,32 @@ button:hover, .btn:hover {
 }
 
 /* 响应式适配 */
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   h1 {
-    font-size: 1.5em;
+    font-size: 5vw;
   }
 
   button, .btn {
-    font-size: 14px;
-    padding: 10px 20px;
+    font-size: 1.1em;
+    padding: 14px 28px;
   }
 
   .navbar a {
-    font-size: 12px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 6vw;
+  }
+
+  button, .btn {
+    font-size: 1em;
+    padding: 12px 24px;
+  }
+
+  .navbar a {
+    font-size: 0.8em;
   }
 }
