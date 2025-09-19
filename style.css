@@ -28,6 +28,12 @@ button:hover, .btn:hover {
   color: #555;
 }
 
+#debug {
+  margin-top: 10px;
+  font-size: 12px;
+  color: red;
+}
+
 .navbar {
   position: fixed;
   bottom: 0;
