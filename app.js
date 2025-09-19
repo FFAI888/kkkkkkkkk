@@ -1,6 +1,7 @@
 const BSC_CHAIN_ID = "0x38"; // BSC 主网
 
 async function connectWallet() {
+  console.log("连接钱包按钮被点击"); // 调试提示
   if (typeof window.ethereum === "undefined") {
     alert("请先安装 MetaMask!");
     return;
@@ -28,6 +29,9 @@ async function connectWallet() {
 window.addEventListener("DOMContentLoaded", () => {
   const connectButton = document.getElementById("connectButton");
   if (connectButton) {
+    console.log("按钮事件已绑定"); // 调试提示
     connectButton.addEventListener("click", connectWallet);
+  } else {
+    console.error("未找到按钮 connectButton");
   }
 });
