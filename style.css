@@ -1,22 +1,43 @@
-body {
+/* 基础重置 */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 关键：避免内容超出屏幕造成滚动条 */
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
   font-family: Arial, sans-serif;
   text-align: center;
   background: #f9f9f9;
+  overflow-x: hidden; /* 禁止左右滚动 */
 }
 
 .container {
-  margin-top: 100px;
+  max-width: 500px; /* 最大宽度限制，防止超宽显示 */
+  width: 90%;       /* 自适应屏幕宽度 */
+  margin: 100px auto 50px auto; /* 上间距100px，居中 */
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  word-wrap: break-word; /* 防止文字溢出 */
 }
 
 button, .btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #f8b400;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   color: white;
   font-size: 16px;
   cursor: pointer;
+  width: 100%; /* 按钮宽度自适应父容器 */
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
 }
 
 button:hover, .btn:hover {
@@ -26,14 +47,17 @@ button:hover, .btn:hover {
 #status {
   margin-top: 20px;
   color: #555;
+  word-wrap: break-word;
 }
 
 #debug {
   margin-top: 10px;
   font-size: 12px;
   color: red;
+  word-wrap: break-word;
 }
 
+/* 底部导航栏自适应 */
 .navbar {
   position: fixed;
   bottom: 0;
@@ -44,12 +68,15 @@ button:hover, .btn:hover {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
+  box-sizing: border-box;
 }
 
 .navbar a {
   text-decoration: none;
   color: #555;
   font-size: 14px;
+  flex: 1;             /* 平分宽度 */
+  text-align: center;  /* 居中显示 */
 }
 
 .navbar a.active {
@@ -59,4 +86,20 @@ button:hover, .btn:hover {
 
 .navbar a:hover {
   color: #f8b400;
+}
+
+/* 响应式适配 */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  button, .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+  }
 }
