@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>登录 - 连接钱包</title>
-  <link rel="stylesheet" href="style.css?v=1.14">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DApp App</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>欢迎使用DApp</h1>
-    <button id="connectButton">连接钱包</button>
-    <p id="status">未连接</p>
-  </div>
+<body class="light-mode">
 
-  <script src="https://cdn.staticfile.org/ethers/5.7.2/ethers.umd.min.js"></script>
-  <script src="app.js?v=1.14"></script>
+<!-- 下拉刷新指示器 -->
+<div id="pullRefresh" class="pull-refresh">
+  <div class="spinner"></div> 正在刷新...
+</div>
+
+<!-- 页面内容 -->
+<div id="pageContent" class="page-content"></div>
+
+<!-- 底部导航栏 -->
+<div class="navbar">
+  <a href="#" data-page="home" class="active" onclick="switchPage(this)">首页</a>
+  <a href="#" data-page="group" onclick="switchPage(this)">拼团</a>
+  <a href="#" data-page="earn" onclick="switchPage(this)">赚币</a>
+  <a href="#" data-page="exchange" onclick="switchPage(this)">兑换</a>
+  <a href="#" data-page="profile" onclick="switchPage(this)">我的</a>
+</div>
+
+<!-- 暗/亮模式切换按钮 -->
+<button class="btn theme-btn" onclick="toggleTheme()">切换暗/亮模式</button>
+
+<script src="app.js"></script>
 </body>
 </html>
