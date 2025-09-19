@@ -46,6 +46,11 @@ button:hover, .btn:hover {
   font-size: 14px;
 }
 
+.navbar a.active {
+  color: #f8b400;
+  font-weight: bold;
+}
+
 .navbar a:hover {
   color: #f8b400;
 }
