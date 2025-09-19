@@ -16,12 +16,10 @@ async function connectWallet() {
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-    // 请求授权账户访问
     const accounts = await provider.send("eth_requestAccounts", []);
     console.log("已连接账户:", accounts);
     debugEl.innerText += `已连接账户: ${accounts[0]}\n`;
 
-    // 获取链信息
     const network = await provider.getNetwork();
     console.log("当前链ID:", network.chainId);
     debugEl.innerText += `当前链ID: ${network.chainId}\n`;
@@ -33,9 +31,7 @@ async function connectWallet() {
     }
 
     document.getElementById("status").innerText = "已连接BSC链";
-
-    // 成功后跳转
-    window.location.href = "relation.html";
+    window.location.href = "relation.html"; // 跳转确认关系页面
   } catch (err) {
     console.error("连接失败:", err);
     debugEl.innerText += "连接失败: " + err.message + "\n";
